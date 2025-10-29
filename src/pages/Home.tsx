@@ -32,7 +32,7 @@ const Home = () => {
                                 <a href="#pages" className="text-white hover:text-orange-500 transition-colors font-medium">All pages</a>
                                 <a href="#template" className="text-white hover:text-orange-500 transition-colors font-medium">Template</a>
                             </nav>
-                            <button className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-md font-bold text-lg transition-colors">
+                            <button className="bg-orange-500 text-[#000000] hover:bg-orange-600 px-8 py-3 rounded-md font-bold text-lg transition-colors">
                                 Purchase template
                             </button>
                         </div>
