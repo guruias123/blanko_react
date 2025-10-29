@@ -82,25 +82,25 @@ const Home = () => {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                         <div className="text-center ">
-                            <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-black">
+                            <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 sm:mt-6 leading-tight text-black">
                                 Blanko template
                             </h1>
-                            <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-black/90 leading-relaxed">
+                            <p className="text-lg text-[16px] md:max-w-[300px] md:mx-auto md:text-center lg:max-w-none lg:mx-0 mb-6 sm:mb-8 text-black/90 leading-relaxed">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio mauris
                                 porttitor ante vulputate.
                             </p>
-                            <div className="flex flex-col lg:flex-row gap-4 justify-center lg:justify-start">
-                                <button className="bg-black text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                            <div className="flex flex-col lg:flex-row gap-4 justify-center lg:justify-start items-center lg:items-start">
+                                <button className="md:max-w-[300px] md:w-full bg-black text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 w-56 whitespace-nowrap">
                                     Purchase template
                                 </button>
-                                <button className="bg-white text-black border-2 border-white px-8 py-4 rounded-md font-bold text-lg hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105">
+                                <button className="md:max-w-[300px] md:w-full bg-white text-black border-2 border-white px-8 py-4 rounded-md font-bold text-lg hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105 w-56 whitespace-nowrap">
                                     Other templates
                                 </button>
                             </div>
                         </div>
 
                         <div className="hidden lg:flex justify-center lg:justify-end mt-8 lg:mt-[-6px]">
-                            <img src="/assets/banner_image.png" alt="Mobile App Mockup" className="w-full max-w-md lg:max-w-full" />
+                            <img src="/assets/banner_image.png" alt="Mobile App Mockup" className="max-w-md lg:max-w-full" />
                         </div>
                     </div>
                 </div>
