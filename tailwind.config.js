@@ -1,11 +1,3 @@
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'inter': ['Roboto','Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       colors: {
         'orange': {

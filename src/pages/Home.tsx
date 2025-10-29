@@ -13,7 +13,8 @@ const Home = () => {
     return (
         <div className="min-h-screen bg-white font-inter">
             {/* Header */}
-            <header className="fixed top-0 left-0 right-0 bg-black text-white z-50 backdrop-blur-sm border-b border-white border-opacity-10">
+            {/* <header className="fixed top-0 left-0 right-0 bg-black text-white z-50 backdrop-blur-sm border-b border-white border-opacity-10 h-full"> */}
+            <header className={`fixed top-0 left-0 right-0 bg-black text-white z-50 backdrop-blur-sm border-b border-white border-opacity-10 ${isMobileMenuOpen ? 'h-full' : ''}`}>
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
                     <nav className="flex items-center justify-between">
                         <div className="flex items-center gap-16">
@@ -37,29 +38,36 @@ const Home = () => {
                         </div>
 
                         <button
-                            className="lg:hidden flex flex-col justify-center items-center w-7 h-7 cursor-pointer"
+                            className="lg:hidden flex justify-center items-center w-7 h-7 cursor-pointer"
                             onClick={toggleMobileMenu}
                             aria-label="Toggle navigation"
                         >
-                            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1' : 'mb-1'}`}></span>
-                            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'mb-1'}`}></span>
-                            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
+                            {isMobileMenuOpen ? (
+                                <img src="/assets/exit.png" alt="Close menu" className="w-5 h-5" />
+                            ) : (
+                                <div className="flex flex-col justify-center items-center">
+                                    <span className="block w-5 h-0.5 bg-white mb-1"></span>
+                                    <span className="block w-5 h-0.5 bg-white mb-1"></span>
+                                    <span className="block w-5 h-0.5 bg-white"></span>
+                                </div>
+                            )}
                         </button>
                     </nav>
 
                     {/* Mobile Menu */}
                     {isMobileMenuOpen && (
-                        <div className="lg:hidden absolute top-full left-0 right-0 bg-black border-t border-gray-800">
-                            <div className="px-6 py-4">
-                                <div className="bg-gray-800 rounded px-3 py-2 mb-4 w-fit">
+                        // <div className="lg:hi÷dden absolute top-full left-0 right-0 bg-black">
+                        <div className="lg:hidden bg-black z-50">
+                            <div className="px-6 pt-10 py-4">
+                                <div className="bg-gray-800 rounded px-3 py-2 mb-5 w-fit">
                                     <span className="text-white text-sm">mail@blanko.com</span>
                                 </div>
-                                <nav className="flex flex-row gap-4 mb-4">
+                                <nav className="flex flex-row gap-4 mb-8">
                                     <a href="#landing" className="text-white hover:text-orange-500 transition-colors font-medium py-2">Landing</a>
                                     <a href="#pages" className="text-white hover:text-orange-500 transition-colors font-medium py-2">All pages</a>
                                     <a href="#template" className="text-white hover:text-orange-500 transition-colors font-medium py-2">Template</a>
                                 </nav>
-                                <button className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-md font-bold text-lg transition-colors w-fit">
+                                <button className="bg-orange-500 text-[#000000] hover:bg-orange-600 px-8 py-3 rounded-md font-bold text-lg transition-colors w-fit">
                                     Purchase template
                                 </button>
                             </div>
@@ -69,19 +77,19 @@ const Home = () => {
             </header>
 
             {/* Hero Section */}
-            <section className="bg-[#FF7143] relative overflow-hidden pt-20 pb-16 lg:pt-24 lg:pb-20">
+            <section className="bg-[#FF7143] relative overflow-hidden pt-20 pb-16 lg:pt-0 lg:pb-0">
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                        <div className="text-center lg:text-left">
-                            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-black">
+                        <div className="text-center ">
+                            <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-black">
                                 Blanko template
                             </h1>
                             <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-black/90 leading-relaxed">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio mauris
                                 porttitor ante vulputate.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <div className="flex flex-col sm:flex-row sm:flex-col gap-4 justify-center lg:justify-start">
                                 <button className="bg-black text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
                                     Purchase template
                                 </button>
@@ -91,8 +99,8 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
-                            <img src="/assets/banner_image.png" alt="Mobile App Mockup" className="w-full max-w-md lg:max-w-full rounded-lg shadow-md" />
+                        <div className="hidden lg:flex justify-center lg:justify-end mt-8 lg:mt-[-6px]">
+                            <img src="/assets/banner_image.png" alt="Mobile App Mockup" className="w-full max-w-md lg:max-w-full" />
                         </div>
                     </div>
                 </div>
@@ -141,7 +149,6 @@ const Home = () => {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 text-gray-900">Landing pages</h2>
                     
-                    {/* First Row - 3 columns */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
                         <LandingPageCard
                             imageSrc="/assets/landing_page_one.png"
@@ -158,10 +165,6 @@ const Home = () => {
                             imageAlt="Landing page three - Build quickly and easily"
                             title="Landing three"
                         />
-                    </div>
-
-                    {/* Second Row - Single card */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         <LandingPageCard
                             imageSrc="/assets/landing_page_four.png"
                             imageAlt="Landing page four - Working with Blanko template"
@@ -179,7 +182,7 @@ const Home = () => {
                         {/* Logo and Button Section */}
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                             <img src='/assets/blanko_logo.png' alt='Blanko Logo' className='w-24 h-auto' />
-                            <button className="bg-white text-black px-4 sm:px-6 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors w-fit">
+                            <button className="bg-white text-black px-4 sm:px-6 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors lg:w-fit">
                                 Get on Webflow
                             </button>
                         </div>
