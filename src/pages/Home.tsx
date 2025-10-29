@@ -89,7 +89,7 @@ const Home = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio mauris
                                 porttitor ante vulputate.
                             </p>
-                            <div className="flex flex-col sm:flex-row sm:flex-col gap-4 justify-center lg:justify-start">
+                            <div className="flex flex-col lg:flex-row gap-4 justify-center lg:justify-start">
                                 <button className="bg-black text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
                                     Purchase template
                                 </button>
